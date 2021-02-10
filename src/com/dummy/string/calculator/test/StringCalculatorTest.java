@@ -2,6 +2,7 @@ package com.dummy.string.calculator.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
 
 import com.dummy.string.calculator.StringCalculator;
@@ -21,11 +22,11 @@ class StringCalculatorTest {
 		int result = calc.add(null);
 		assertEquals(0, result);
 	}
-
+	@Ignore
 	@Test
 	void testForSplitByComma() {
 		StringCalculator stringCalculator = new StringCalculator();
-		int result = stringCalculator.add("12,13");
-		assertEquals(25, result);
+		int result = stringCalculator.add("12,13,1,56");
+		assertEquals(82, result);
 	}
 }
