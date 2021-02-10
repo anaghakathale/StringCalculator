@@ -22,4 +22,10 @@ class StringCalculatorTest {
 		assertEquals(0, result);
 	}
 
+	@Test
+	void testForSplitByComma() {
+		StringCalculator stringCalculator = new StringCalculator();
+		int result = stringCalculator.add("12,13");
+		assertEquals(25, result);
+	}
 }
