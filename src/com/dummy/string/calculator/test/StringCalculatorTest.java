@@ -22,7 +22,7 @@ class StringCalculatorTest {
 		int result = calc.add(null);
 		assertEquals(0, result);
 	}
-	@Ignore
+	
 	@Test
 	void testForSplitByComma() {
 		StringCalculator stringCalculator = new StringCalculator();
