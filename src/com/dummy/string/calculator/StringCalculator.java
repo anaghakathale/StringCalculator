@@ -7,7 +7,7 @@ public class StringCalculator {
 		if (null == numbers || "".equalsIgnoreCase(numbers)) {
 			return 0;
 		}
-		String[] splitString = numbers.split(",");
+		String[] splitString = numbers.split("[\n,]");
 		for(int i=0;i<splitString.length;i++) {
 			count = count + Integer.parseInt(splitString[i]);
 		}

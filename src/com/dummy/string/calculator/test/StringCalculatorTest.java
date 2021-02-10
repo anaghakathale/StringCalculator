@@ -29,4 +29,11 @@ class StringCalculatorTest {
 		int result = stringCalculator.add("12,13,1,56");
 		assertEquals(82, result);
 	}
+	
+	@Test
+	void testForNewLineCharacter() {
+		StringCalculator stringCalculator = new StringCalculator();
+		int result = stringCalculator.add("12\n1,5");
+		assertEquals(18, result);
+	}
 }
