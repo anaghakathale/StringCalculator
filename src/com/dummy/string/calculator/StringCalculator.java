@@ -12,7 +12,10 @@ public class StringCalculator {
 		}
 		String[] splitString = numbers.split("[\n,"+getDefaultDelimeter(numbers)+"]");
 		for(int i=0;i<splitString.length;i++) {
-			count = count + Integer.parseInt(splitString[i]);
+			if (!"".equalsIgnoreCase(splitString[i])) {
+				count = count + Integer.parseInt(splitString[i]);
+			}
+			
 		}
 		return count;
 	}

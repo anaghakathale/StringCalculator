@@ -42,4 +42,11 @@ class StringCalculatorTest {
 		String delimeter = stringCalculator.getDefaultDelimeter(";\n123");
 		assertEquals(";", delimeter);
 	}
+	
+	@Test
+	void testAdditionForDefaultDelimeter() {
+		StringCalculator stringCalculator = new StringCalculator();
+		int result = stringCalculator.add(";\n1;2");
+		assertEquals(3, result);
+	}
 }
