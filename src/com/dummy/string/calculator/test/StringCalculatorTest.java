@@ -3,6 +3,9 @@ package com.dummy.string.calculator.test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
 import com.dummy.string.calculator.MyException;
@@ -53,9 +56,25 @@ class StringCalculatorTest {
 	}
 	
 	@Test
+	void testdelimerOfAnyLength() throws MyException {
+		StringCalculator stringCalculator = new StringCalculator();
+		int result = stringCalculator.add("***\n1***2***3");
+		assertEquals(6, result);
+	}
+	
+	@Test
 	void testToThrowExceptionForNegativeNumber() {
 		StringCalculator stringCalculator = new StringCalculator();
 		MyException ex = assertThrows(MyException.class, () -> stringCalculator.add(";\n1;-2"));
 		assertEquals("negatives not allowed", ex.getMessage());
+	}
+	
+	@Test
+	void testToThrowExceptionIncludingNumber() {
+		StringCalculator stringCalculator = new StringCalculator();
+		MyException ex = assertThrows(MyException.class, () -> stringCalculator.add(";\n1;-2;-66"));
+		List<String> list = new ArrayList<String>();
+		list.add("-2");
+		assertEquals(list, ex.getNegativeNumbers());
 	}
 }
