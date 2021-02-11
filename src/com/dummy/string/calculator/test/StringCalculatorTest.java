@@ -1,8 +1,7 @@
 package com.dummy.string.calculator.test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
 
 import com.dummy.string.calculator.StringCalculator;
@@ -35,5 +34,12 @@ class StringCalculatorTest {
 		StringCalculator stringCalculator = new StringCalculator();
 		int result = stringCalculator.add("12\n1,5");
 		assertEquals(18, result);
+	}
+	
+	@Test
+	void testDefaultDelimeterAtBegining() {
+		StringCalculator stringCalculator = new StringCalculator();
+		String delimeter = stringCalculator.getDefaultDelimeter(";\n123");
+		assertEquals(";", delimeter);
 	}
 }
