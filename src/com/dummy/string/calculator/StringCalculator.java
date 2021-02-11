@@ -5,10 +5,13 @@ import java.util.regex.Pattern;
 
 public class StringCalculator {
 
-	public int add(String numbers) {
+	public int add(String numbers) throws MyException {
 		int count = 0;
 		if (null == numbers || "".equalsIgnoreCase(numbers)) {
 			return 0;
+		}
+		if(numbers.contains("-")) {
+			throw new MyException("negatives not allowed");
 		}
 		String[] splitString = numbers.split("[\n,"+getDefaultDelimeter(numbers)+"]");
 		for(int i=0;i<splitString.length;i++) {
